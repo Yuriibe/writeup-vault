@@ -94,7 +94,47 @@ Signs of being infostealers:
 
 ### 🔐 Encoding Technique
 
-Base85 encoding + XOR cipher with hardcoded keys
+The malware used a combo of **Base85 encoding** and an **XOR cipher** with hardcoded keys to obfuscate its payload URLs. I discovered this while reversing `main.pyc` from Payload 5. After extracting the binary using [pyinstxtractor](https://github.com/extremecoders-re/pyinstxtractor) and partially decompiling with `pycdc`, I noticed suspicious encoded strings like this:
+
+```python
+
+sJ6APjTTG5m = [
+    bytes((
+        lambda .0: [
+            b ^ bytes([
+                79, 236, 233, 131, 98, 113, 56, 128,
+                1, 188, 24, 65, 215, 92, 0, 10
+            ])[i % len(bytes([
+                79, 236, 233, 131, 98, 113, 56, 128,
+                1, 188, 24, 65, 215, 92, 0, 10
+            ]))]
+            for i, b in .0
+        ]
+    )(enumerate(base64.b85decode(
+        'Czze{5la`ZaouY*vOZ~KVULFHO#@l?F8C@Il@dxv3j'
+    )))).decode(),
+
+    bytes((
+        lambda .0: [
+            b ^ bytes([
+                251, 205, 223, 132, 109, 225, 225, 177,
+                201, 73, 47, 106, 241, 225, 7, 190
+            ])[i % len(bytes([
+                251, 205, 223, 132, 109, 225, 225, 177,
+                201, 73, 47, 106, 241, 225, 7, 190
+            ]))]
+            for i, b in .0
+        ]
+    )(enumerate(base64.b85decode(
+        'lew$(9^1~Ipe;%akdkQFkK?@S0M3!nx;;u6-qS+YuB(~+Uev0Bxn^AphRy'
+    )))).decode()
+]
+
+
+```
+
+
+From there, I wrote a quick decoder in Python:
 
 ```python
 import base64
