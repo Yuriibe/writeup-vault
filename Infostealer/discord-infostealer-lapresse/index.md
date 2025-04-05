@@ -29,7 +29,7 @@ I investigated a Discord-distributed malware campaign delivering a Python-based 
 - **Behavior**:
     - Hosted on Discord CDN
     - Attempts to evade detection of payloads by using a `.zip` extension with an executable file (confirmed by `MZ` header in HxD)
-    - ![[HxD.png]]
+    - ![HxD](./images/HxD.png)
     - Downloads additional payloads via obfuscated PowerShell script
 
 ---
@@ -39,11 +39,10 @@ I investigated a Discord-distributed malware campaign delivering a Python-based 
 [https://discordservers.com/server/135413481619456414](https://discordservers.com/server/1354134816194564147)
 
 ### ❌ Fake user:
-
-![[fakeUser.png]]
+ ![Fake user](./images/fakeUser.png)
 ### ✅ Real user:
 
-![[realUser.png]]
+ ![Real User](./images/realUser.png)
 
 ---
 
@@ -83,7 +82,7 @@ Despite `.zip` extension, all are PyInstaller-packed `.exe` files.
 
 - **Payloads 1, 3, 5** → PyInstaller executables
 
-![[image.webp]]
+![Detect it Easy](./images/image.webp)
 
 Signs of being infostealers:
 
