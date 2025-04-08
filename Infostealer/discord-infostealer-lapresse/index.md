@@ -198,9 +198,8 @@ Org: AS214943 Railnet LLC
 
 - Hosted on: [Lapresse-Hugo’s GitHub fork](https://github.com/Lapresse-Hugo/MalwareDatabase)
 - Claimed Identity: [Hugo Lapresse](https://www.linkedin.com/in/hugo-lapresse/)
-- Possibly linked to: [HypeProtect](https://hypeprotect.fr/)
 
-⚠️ Attribution **not confirmed** – could be fake or compromised.
+⚠️ Attribution likely false – this appears to be impersonation.
 
 ---
 
