@@ -1,14 +1,15 @@
 ---
 layout: default
-title: Yuriibe’s Malware Lab
+title: Yuriibe's Malware Analysis Lab
 ---
 
-# 🧬 Malware Analysis Blog
+# 👾 Malware Analysis Blog
 
-Welcome to my malware analysis lab. Here I post research on malware loaders, stealer behavior, Powershell payloads, DLL sideloading, and more.
+Welcome to my analysis archive.  
+Here I document malware stages, loaders, obfuscation tricks, and C2 behaviors.
 
 ---
 
-## 📚 Posts
+## 🔍 Blog Posts
 
-- [🧪 Discord InfoStealer Breakdown](./Infostealer/discord-infostealer-lapresse/index.md)
+- [🧪 Discord InfoStealer (Lapresse)](./Infostealer/discord-infostealer-lapresse/index.md)
