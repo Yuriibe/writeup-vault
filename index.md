@@ -12,4 +12,4 @@ Here I document malware stages, loaders, obfuscation tricks, and C2 behaviors.
 
 ## 🔍 Blog Posts
 
-- [🧪 Discord InfoStealer (Lapresse)](./Infostealer/discord-infostealer-lapresse/index.md)
+- [🧪 Discord InfoStealer (Lapresse)](./malware-analysis/Infostealer/discord-infostealer-lapresse/index.md)
