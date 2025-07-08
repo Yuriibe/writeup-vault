@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Yuriibe's Malware Analysis Lab
+title: Yuriibe's writeup-vault
 ---
 
-# 👾 Malware Analysis Blog
+# 🧠 writeup-vault
 
-Welcome to my analysis archive.  
-Here I document malware stages, loaders, obfuscation tricks, and C2 behaviors.
+Welcome to my personal archive of cybersecurity writeups.  
+Here you'll find deep dives into malware behavior, exploitation tactics, obfuscation techniques, and command-and-control patterns.
 
 ---
 
-## 🔍 Blog Posts
+## 📄 Writeups
 
 - [🧪 Discord InfoStealer (Lapresse)](./malware-analysis/Infostealer/discord-infostealer-lapresse/index.md)
