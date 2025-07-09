@@ -12,4 +12,5 @@ Here you'll find deep dives into malware behavior, exploitation tactics, obfusca
 
 ## 📄 Writeups
 
+- [🖼️ From Pixels to Payload](experimental/From%20Pixels%20to%20Payload/index.md)
 - [🧪 Discord InfoStealer (Lapresse)](./malware-analysis/Infostealer/discord-infostealer-lapresse/index.md)

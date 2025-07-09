@@ -1,3 +1,6 @@
+# **From Pixels to Payload**
+
+---
 ### 🎯 **Goal**
 
 This writeup documents a personal learning experiment aimed at understanding how binary payloads can be stealthily embedded in images and executed entirely in memory with minimal forensic footprint.
@@ -17,12 +20,14 @@ Although the extractor and runtime code are currently implemented in Python, the
 This project is ongoing and even if some parts don't fully achieve the intended stealth or reliability, the process of testing, analyzing, and improving is the actual objective.  
 It's as much about **understanding trade-offs** and limitations as it is about reaching a "perfect" PoC.
 
+---
 ### 📦 Components
 
 - `embed.py` → Encodes a shellcode or any binary payload into the LSBs of a PNG image
     
 - `extract.py` → Recovers the payload, decodes it, and executes it in memory
 
+---
 ### ⚙️ Technical Workflow
 
 **embedding**
@@ -31,10 +36,13 @@ It's as much about **understanding trade-offs** and limitations as it is about r
 **extracting**
 ![Extraction Flowchart](extract.drawio.png)
 
+---
 💡 Why LSB + Memory Execution?
 
 
+---
 🔐 Tested Payloads
 
 
+---
 🧪 Output Example
