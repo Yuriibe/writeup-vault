@@ -36,10 +36,10 @@ It's as much about **understanding trade-offs** and limitations as it is about r
 ### ⚙️ Technical Workflow
 
 **Embedding Phase**  
-![Embedding Flowchart](_screenshots/flowChartEmbed.drawio.png)
+![Embedding Flowchart](flowChartEmbed.drawio.png)
 
 **Extraction Phase**  
-![Extraction Flowchart](_screenshots/extract.drawio.png)
+![Extraction Flowchart](extract.drawio.png)
 
 ---
 💡 Why LSB + Memory Execution?
