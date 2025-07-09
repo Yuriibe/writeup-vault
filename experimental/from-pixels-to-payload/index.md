@@ -73,6 +73,10 @@ Byte length: 396
 [DEBUG] Allocated pointer: 0x21ff5500000
 ```
 
+Executing the extractor pops our messagebox.
+
+![[messagebox.png]]
+
 ---
 ### 🔗 POC Repository
 
