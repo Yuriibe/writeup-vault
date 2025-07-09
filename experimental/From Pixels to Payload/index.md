@@ -1,3 +1,8 @@
+---
+layout: default
+title: From Pixels to Payload
+---
+
 # **From Pixels to Payload**
 
 ---
