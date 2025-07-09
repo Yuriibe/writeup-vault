@@ -43,10 +43,38 @@ It's as much about **understanding trade-offs** and limitations as it is about r
 ---
 💡 Why LSB + Memory Execution?
 
+I wanted to test whether it’s possible to **hide a payload inside an image** and then execute it without ever writing anything to disk. That’s where **LSB steganography** and **in-memory execution** come in.
+
+- LSB lets me embed data inside an image without changing how it looks.
+- In-memory execution avoids writing an EXE or DLL to disk – the payload runs directly from memory.
+
+This combo sounded interesting, so I set out to see **if it would actually work in practice**, starting with simple payloads and expanding from there.
 
 ---
 🔐 Tested Payloads
+``` bash
+msfvenom -p windows/x64/messagebox TEXT="Hello" TITLE="Stego" -f python
+```
 
+![payload](./images/msfvenom_textbox.png)
 
 ---
 🧪 Output Example
+
+```bash
+Text embedded.
+Encoded base64 payload: /EiB5PD////ozAAAAEFRQVBSSDHSZUiLU........
+Byte length: 396
+```
+
+```bash
+[+] Extracted (Base64): b'/EiB5PD////ozAAAAEFRQVBSSDHSZUiLUmBRVkiLUhhIi1IgTTHJSA.......'
+[+] Decoded Payload: b'\xfcH\x81\xe4\xf0\xff\xff\xff\xe8\xcc\x00\x00\x00AQAPRH1\xd2eH\x8bR`QVH\x8bR\x18H\x8bR M1\xc9H\x0f\xb7JJH\x8brPH1\xc0\xac<a|\x02, A\xc1\xc9\rA\x01\xc1\xe2\xedRH\x8bR \x8bB<H\x01\xd0f\x81x\x18\x0b\x02AQ\x0f\x85r\x00\x00\x00\x8b\x80\x88\...........'
+[DEBUG] Allocated pointer: 0x21ff5500000
+```
+
+---
+### 🔗 POC Repository
+
+You can find the full code, for this POC here:  
+[**📂 github.com/Yuriibe/poc_stegano_loader**](https://github.com/Yuriibe/poc_stegano_loader)
