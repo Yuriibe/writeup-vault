@@ -125,9 +125,12 @@ This exercise significantly leveled up my understanding of binary data handling 
 ### 🔗 POC Repository
 
 You can find the full code, for the Python POC here:  
+
 [**📂github.com/Yuriibe/poc_stegano_loader**](https://github.com/Yuriibe/poc_stegano_loader)
 
+
 And for the C++ Extractor here:
+
 [**📂github.com/Yuriibe/StegaExtractor**](https://github.com/Yuriibe/StegaExtractor)
 
 ---
