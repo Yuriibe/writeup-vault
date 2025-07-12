@@ -96,8 +96,7 @@ Then, after extraction:
 
 Executing the extractor pops our messagebox.
 
-![[messagebox.png]]
-
+![messagebox](./images/messagebox.png)
 
 ---
 ### 💻 C++ Rebuild & Shellcode Execution
