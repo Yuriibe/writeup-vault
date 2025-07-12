@@ -1,3 +1,8 @@
+---
+layout: default
+title: From Pixels to Payload
+---
+
 ## 🛠️ Part 2 – DLL Search Order Hijacking via `explorer.exe`
 
 After messing around with in-memory payloads hidden in images (LSB), I wanted to try something more native like getting code to run just by dropping a DLL. So I started looking into **DLL search order hijacking**, and `explorer.exe` turned out to be a solid target.
@@ -25,7 +30,7 @@ I was looking for DLLs that Windows tries (and fails) to load, especially from:
 
 This revealed several missing DLLs,
 
-![[procmon.png]]
+![procmon](./images/procmon.png)
 
 But I couldn’t find a consistently missing DLL that actually worked when hijacked most of them either existed or didn’t get loaded even if I dropped a fake one.
 
@@ -69,15 +74,15 @@ To do that:
 
 - **Granted full permissions** with `icacls`
 
-- **Move the old DLL or rename it ** 
+- **Move the old DLL or rename it** 
 
-![[movingOldDll.png]]
+![MovingDLL](./images/movingOldDll.png)
 
 - **Move our own DLL** into the System32 folder
   
 We now have our original DLL as backup as well as our own malicous one
-  ![[sytem32.png]]
 
+![sytem32](./images/sytem32.png)
 ---
 
 #### ♻️ 4. Restart `explorer.exe`
@@ -85,12 +90,11 @@ We now have our original DLL as backup as well as our own malicous one
 With the hijack in place, I ran:
 
 `taskkill /f /im explorer.exe`
-` start explorer.exe``
+`start explorer.exe`
 
 And boom 💥 the messagebox popped. The DLL was successfully hijacked and executed **as part of a trusted Windows process**.
 
-![[proof.png]]
-
+![proof](./images/proof.png)
 ---
 
 ### ✅ Why This Works
@@ -116,7 +120,7 @@ So far we’ve done:
 **Next up:**  
 What happens when we _combine_ them?
 
-In **Part 3**, I’ll chain the steganographic image loader from Part 1 with the DLL hijack from Part 2 — meaning:
+In **Part 3**, I’ll chain the steganographic image loader from Part 1 with the DLL hijack from Part 2, meaning:
 
 - An image hides the payload
 
