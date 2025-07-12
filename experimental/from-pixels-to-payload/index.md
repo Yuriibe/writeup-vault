@@ -147,6 +147,7 @@ The next phase of this project will explore **DLL Search Order Hijacking** as a 
 
 This will allow me to test in-memory execution in a real-world process context—without dropping any obvious executables to disk, and without triggering UAC prompts. Part 2 will focus on **loading the payload as part of a trusted process**.
 
+➡️ [Read Part 2 – DLL Hijacking via explorer.exe](Part2)
 ---
 ## 📩 Contact
 
