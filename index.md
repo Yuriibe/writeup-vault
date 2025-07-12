@@ -11,6 +11,6 @@ Here you'll find deep dives into malware behavior, exploitation tactics, obfusca
 ---
 
 ## 📄 Writeups
-
+- [🧨 From Pixels to Payload - DLL Search Order Hijacking](experimental/from-pixels-to-payload/Part2.md)
 - [🖼️ From Pixels to Payload](experimental/from-pixels-to-payload/index.md)
 - [🧪 Discord InfoStealer (Lapresse)](./malware-analysis/Infostealer/discord-infostealer-lapresse/index.md)
