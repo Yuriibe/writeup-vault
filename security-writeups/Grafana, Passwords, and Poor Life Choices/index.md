@@ -69,7 +69,7 @@ The second one tries to go up three directories and read `/etc/passwd`. If the a
 
 The vulnerability exists in Grafana versions 8.0.0 through 8.3.0. The plugin loading mechanism didn't properly validate file paths, so we can just ask nicely for files.
 
-![](./_screenshots/image.png)
+![](./screenshots/image.png)
 
 **And just like that, we're reading `/etc/passwd`!**
 
@@ -92,7 +92,7 @@ Every Grafana instance has a configuration file at `/etc/grafana/grafana.ini`. T
 
 Let's grab it:
 
-![](./_screenshots/image%201.png)
+![](./screenshots/image%201.png)
 
 **BINGO!** Look at that beautiful secret key just sitting there. This is the encryption key Grafana uses to "protect" sensitive data like database passwords.
 
@@ -109,7 +109,7 @@ path = grafana.db
 
 The secret key is literally the master key to decrypt everything. It's like finding the password to the password manager.
 
-![](./_screenshots/Guy_tapping_head_meme.jpg)
+![](./screenshots/Guy_tapping_head_meme.jpg)
 
 ---
 ## Part 4: Database Heist
@@ -186,7 +186,7 @@ Just paste in:
 3. Click decrypt
 4. Watch the password appear in plaintext
 
-![](./_screenshots/image%203.png)
+![](./screenshots/image%203.png)
 
 **Success!** The passwords just... fell out. Like digital candy from a piñata.
 
@@ -208,7 +208,7 @@ cd exploit-grafana-CVE-2021-43798
 python3 exploit.py
 ```
 
-![](./_screenshots/image%204.png)
+![](./screenshots/image%204.png)
 
 The tool automatically:
 
@@ -230,7 +230,7 @@ With the decrypted credentials, I tried logging into the Grafana admin panel:
 - Username: `admin`
 - Password: `[REDACTED]` (one of the decrypted passwords)
 
-![](./_screenshots/image%205.png)
+![](./screenshots/image%205.png)
 
 **I'm in!** 🎉
 
@@ -253,7 +253,7 @@ Grafana has this neat feature where admin users can execute SQL queries through 
 
 (It's also a massive security risk if you get compromised, but hey, that's not Grafana's fault.)
 
-![](./_screenshots/image%205.png)
+![](./screenshots/image%205.png)
 
 I found a MySQL data source connected to a **Zabbix** database. For those who don't know, Zabbix is a monitoring platform. It monitors servers, network devices, applications basically everything in your infrastructure.
 
@@ -270,9 +270,9 @@ This is like finding the map to the treasure.
 ### Creating a Query Panel
 
 I went to create a new dashboard panel:
-![](./_screenshots/image%206.png)
+![](./screenshots/image%206.png)
 
-![](./_screenshots/image%207.png)
+![](./screenshots/image%207.png)
 
 Now I have a SQL query editor. Time to do some reconnaissance!
 
@@ -282,7 +282,7 @@ Now I have a SQL query editor. Time to do some reconnaissance!
 SELECT @@version;
 ```
 
-![](./_screenshots/image%208.png)
+![](./screenshots/image%208.png)
 
 Result: `10.3.39-MariaDB-0+deb10u2`
 
@@ -291,7 +291,7 @@ Result: `10.3.39-MariaDB-0+deb10u2`
 ```sql
 SELECT DATABASE();
 ```
-![](./_screenshots/image%209.png)
+![](./screenshots/image%209.png)
 
 Result: `zabbix`
 
@@ -341,7 +341,7 @@ VALUES (
   50, 'UTC', 3
 );
 ```
-![](./_screenshots/image%2010.png)
+![](./screenshots/image%2010.png)
 
 **Verification:**
 
@@ -349,7 +349,7 @@ VALUES (
 SELECT userid, alias, name, roleid FROM users WHERE userid = 123;
 ```
 
-![](./_screenshots/image%2011.png)
+![](./screenshots/image%2011.png)
 
 **Boom!** I now have:
 
@@ -371,7 +371,7 @@ With my shiny new backdoor account, I headed over to the Zabbix web interface:
 
 **And just like that, I'm in the Zabbix admin panel!**
 
-![](./_screenshots/image%2012.png)
+![](./screenshots/image%2012.png)
 
 **What I can see:**
 
@@ -393,7 +393,7 @@ The Scripts section is where Zabbix admins can create scripts to run on monitore
 
 Navigation: `Administration → Scripts → Create Script`
 
-![](./_screenshots/image%2013.png)
+![](./screenshots/image%2013.png)
 
 **Configuration:**
 
@@ -432,7 +432,7 @@ nc -lvnp 4444
 
 ### We Got a Shell!
 
-![](./_screenshots/image%2014.png)
+![](./screenshots/image%2014.png)
 
 **Success!** I now have a shell as the `zabbix` user on the monitoring server.
 
@@ -459,7 +459,7 @@ Remember all those passwords we decrypted earlier? Time to test if anyone commit
 zabbix@zabbix:/tmp$ su root
 Password: [REDACTED - Same password as Grafana admin]
 ```
-![](./_screenshots/image%2015.png)
+![](./screenshots/image%2015.png)
 
 **THEY USED THE SAME PASSWORD FOR ROOT AS THEY DID FOR GRAFANA!**
 
@@ -473,7 +473,7 @@ I literally just typed one password and became root. No privilege escalation exp
 
 This is why your security team has trust issues, folks.
 
-![](./_screenshots/Expanding_Brain_Meme.jpg)
+![](./screenshots/Expanding_Brain_Meme.jpg)
 
 ---
 
@@ -712,7 +712,7 @@ Every Grafana instance has a configuration file at `/etc/grafana/grafana.ini`. T
 
 Let's grab it:
 
-![](./_screenshots/image%201.png)
+![](./screenshots/image%201.png)
 
 **BINGO!** Look at that beautiful secret key just sitting there. This is the encryption key Grafana uses to "protect" sensitive data like database passwords.
 
@@ -729,7 +729,7 @@ path = grafana.db
 
 The secret key is literally the master key to decrypt everything. It's like finding the password to the password manager.
 
-![](./_screenshots/Guy_tapping_head_meme.jpg)
+![](./screenshots/Guy_tapping_head_meme.jpg)
 
 ---
 ## Part 4: Database Heist
@@ -806,7 +806,7 @@ Just paste in:
 3. Click decrypt
 4. Watch the password appear in plaintext
 
-![](./_screenshots/image%203.png)
+![](./screenshots/image%203.png)
 
 **Success!** The passwords just... fell out. Like digital candy from a piñata.
 
@@ -828,7 +828,7 @@ cd exploit-grafana-CVE-2021-43798
 python3 exploit.py
 ```
 
-![](./_screenshots/image%204.png)
+![](./screenshots/image%204.png)
 
 The tool automatically:
 
@@ -850,7 +850,7 @@ With the decrypted credentials, I tried logging into the Grafana admin panel:
 - Username: `admin`
 - Password: `[REDACTED]` (one of the decrypted passwords)
 
-![](./_screenshots/image%205.png)
+![](./screenshots/image%205.png)
 
 **I'm in!** 🎉
 
@@ -873,7 +873,7 @@ Grafana has this neat feature where admin users can execute SQL queries through 
 
 (It's also a massive security risk if you get compromised, but hey, that's not Grafana's fault.)
 
-![](./_screenshots/image%205.png)
+![](./screenshots/image%205.png)
 
 I found a MySQL data source connected to a **Zabbix** database. For those who don't know, Zabbix is a monitoring platform. It monitors servers, network devices, applications basically everything in your infrastructure.
 
@@ -890,9 +890,9 @@ This is like finding the map to the treasure.
 ### Creating a Query Panel
 
 I went to create a new dashboard panel:
-![](./_screenshots/image%206.png)
+![](./screenshots/image%206.png)
 
-![](./_screenshots/image%207.png)
+![](./screenshots/image%207.png)
 
 Now I have a SQL query editor. Time to do some reconnaissance!
 
@@ -902,7 +902,7 @@ Now I have a SQL query editor. Time to do some reconnaissance!
 SELECT @@version;
 ```
 
-![](./_screenshots/image%208.png)
+![](./screenshots/image%208.png)
 
 Result: `10.3.39-MariaDB-0+deb10u2`
 
@@ -911,7 +911,7 @@ Result: `10.3.39-MariaDB-0+deb10u2`
 ```sql
 SELECT DATABASE();
 ```
-![](./_screenshots/image%209.png)
+![](./screenshots/image%209.png)
 
 Result: `zabbix`
 
@@ -961,7 +961,7 @@ VALUES (
   50, 'UTC', 3
 );
 ```
-![](./_screenshots/image%2010.png)
+![](./screenshots/image%2010.png)
 
 **Verification:**
 
@@ -969,7 +969,7 @@ VALUES (
 SELECT userid, alias, name, roleid FROM users WHERE userid = 123;
 ```
 
-![](./_screenshots/image%2011.png)
+![](./screenshots/image%2011.png)
 
 **Boom!** I now have:
 
@@ -991,7 +991,7 @@ With my shiny new backdoor account, I headed over to the Zabbix web interface:
 
 **And just like that, I'm in the Zabbix admin panel!**
 
-![](./_screenshots/image%2012.png)
+![](./screenshots/image%2012.png)
 
 **What I can see:**
 
@@ -1013,7 +1013,7 @@ The Scripts section is where Zabbix admins can create scripts to run on monitore
 
 Navigation: `Administration → Scripts → Create Script`
 
-![](./_screenshots/image%2013.png)
+![](./screenshots/image%2013.png)
 
 **Configuration:**
 
@@ -1052,7 +1052,7 @@ nc -lvnp 4444
 
 ### We Got a Shell!
 
-![](./_screenshots/image%2014.png)
+![](./screenshots/image%2014.png)
 
 **Success!** I now have a shell as the `zabbix` user on the monitoring server.
 
@@ -1079,7 +1079,7 @@ Remember all those passwords we decrypted earlier? Time to test if anyone commit
 zabbix@zabbix:/tmp$ su root
 Password: [REDACTED - Same password as Grafana admin]
 ```
-![](./_screenshots/image%2015.png)
+![](./screenshots/image%2015.png)
 
 **THEY USED THE SAME PASSWORD FOR ROOT AS THEY DID FOR GRAFANA!**
 
@@ -1093,7 +1093,7 @@ I literally just typed one password and became root. No privilege escalation exp
 
 This is why your security team has trust issues, folks.
 
-![](./_screenshots/Expanding_Brain_Meme.jpg)
+![](./screenshots/Expanding_Brain_Meme.jpg)
 
 ---
 
