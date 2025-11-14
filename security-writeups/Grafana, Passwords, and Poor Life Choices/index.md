@@ -348,7 +348,7 @@ VALUES (
 **Verification:**
 
 ```sql
-SELECT userid, alias, name, roleid FROM users WHERE userid = 123;
+SELECT userid, alias, name, passwd FROM users WHERE userid = 123;
 ```
 
 ![](./screenshots/image%2011.png)
