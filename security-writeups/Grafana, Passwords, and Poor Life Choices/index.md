@@ -1,4 +1,6 @@
 
+# Grafana, Passwords, and Poor Life Choices
+
 ---
 ### Disclaimer (The Boring but Necessary Part)
 
