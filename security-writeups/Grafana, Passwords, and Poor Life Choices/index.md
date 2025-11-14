@@ -24,7 +24,7 @@ So there I was, just casually port scanning my lab environment (as one does on a
 3. Got a secret key (spoiler: it wasn't that secret)
 4. Decrypted ALL the passwords
 5. Logged into Grafana like I owned the place
-6. Used SQL injection (the legal kind, in my own lab!)
+6. Used SQL execution
 7. Created a backdoor admin account
 8. Got a reverse shell
 9. Found out everyone was using the same password
@@ -245,7 +245,7 @@ At this point I have full Grafana admin access. I can:
 
 ---
 
-## Part 8: SQL Injection (The Legal Kind)
+## Part 8: SQL execution
 
 ### Discovering the MySQL Data Source
 
