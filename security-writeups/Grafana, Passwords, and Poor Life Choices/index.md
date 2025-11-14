@@ -559,14 +559,6 @@ I cannot stress this enough. Get a password manager. Generate random passwords. 
 - No query logging or restrictions
 - **Lesson:** Least privilege is your friend
 
-**Failure #5: No Defense in Depth** There was no:
-
-- Multi-factor authentication
-- Network segmentation
-- Intrusion detection
-- Monitoring of monitoring systems (meta!)
-- **Lesson:** One layer of security is no layers of security
-
 ### The Cascading Failure
 
 Here's the thing - ANY ONE of these being fixed would have stopped or severely hampered this attack:
