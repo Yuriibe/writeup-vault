@@ -15,7 +15,7 @@ Exploring vulnerabilities, malware behavior, exploitation techniques, and the oc
 ### 🔓 Security & Exploitation
 Deep dives into CVEs, penetration testing, and real-world attack chains.
 
-- [🔐 Grafana, Passwords, and Poor Life Choices: CVE-2021-43798](./security-writeups/Grafana%2C%20Passwords%2C%20and%20Poor%20Life%20Choices/index.md)  
+- [🔐 Grafana, Passwords, and Poor Life Choices: CVE-2021-43798](./security-writeups/Grafana%2C%20Passwords%2C%20and%20Poor%20Life%20Choices/)  
   *From path traversal to root access*
 
 ### 🧪 Experimental Research
