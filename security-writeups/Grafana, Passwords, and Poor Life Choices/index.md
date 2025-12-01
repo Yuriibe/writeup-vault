@@ -1080,7 +1080,6 @@ zabbix@zabbix:/tmp$ su root
 Password: [REDACTED - Same password as Grafana admin]
 ```
 ![](./screenshots/image%2015.png)
-
 **THEY USED THE SAME PASSWORD FOR ROOT AS THEY DID FOR GRAFANA!**
 
 I literally just typed one password and became root. No privilege escalation exploit. No kernel vulnerabilities. Just good old-fashioned password reuse.
