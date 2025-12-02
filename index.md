@@ -15,7 +15,7 @@ Exploring vulnerabilities, malware behavior, exploitation techniques, and the oc
 
 TryHackMe's annual December cybersecurity challenge series - 25 days of festive hacking.
 
-- [Day 1 - Linux CLI - Shells Bells](./security-writeups/https://yuriibe.github.io/writeup-vault/Advent-of-cyber-2025/Day%201/)
+- [Day 1 - Linux CLI - Shells Bells](./Advent-of-cyber-2025/Day%201/)
 
 ### 🔓 Security & Exploitation
 Deep dives into CVEs, penetration testing, and real-world attack chains.
