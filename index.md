@@ -15,32 +15,29 @@ Exploring vulnerabilities, malware behavior, exploitation techniques, and the oc
 
 TryHackMe's annual December cybersecurity challenge series - 25 days of festive hacking.
 
-- Day 1 - Linux CLI - Shells Bells  
-    _Investigating a kidnapping through Linux forensics_
+- [Day 1 - Linux CLI - Shells Bells](./security-writeups/https://yuriibe.github.io/writeup-vault/Advent-of-cyber-2025/Day%201/)
 
 ### 🔓 Security & Exploitation
-
 Deep dives into CVEs, penetration testing, and real-world attack chains.
 
-- 🔐 Grafana, Passwords, and Poor Life Choices: CVE-2021-43798  
-    _From path traversal to root access_
+- [🔐 Grafana, Passwords, and Poor Life Choices: CVE-2021-43798](./security-writeups/Grafana%2C%20Passwords%2C%20and%20Poor%20Life%20Choices/)  
+  *From path traversal to root access*
 
 ### 🧪 Experimental Research
-
 Proof-of-concepts, novel techniques, and creative exploitation methods.
 
-- 🧨 From Pixels to Payload - DLL Search Order Hijacking  
-    _Part 2: Exploiting DLL loading behavior_
-- 🖼️ From Pixels to Payload  
-    _Part 1: When images aren't just images_
-
+- [🧨 From Pixels to Payload - DLL Search Order Hijacking](Part2.md)  
+  *Part 2: Exploiting DLL loading behavior*
+  
+- [🖼️ From Pixels to Payload](experimental/from-pixels-to-payload/index.md)  
+  *Part 1: When images aren't just images*
 
 ### 🦠 Malware Analysis
-
 Reverse engineering, behavioral analysis, and IOC extraction from real-world samples.
 
-- 🧪 Discord InfoStealer (Lapresse)  
-    _Analyzing a Discord-based information stealer_
+- [🧪 Discord InfoStealer (Lapresse)](malware-analysis/Infostealer/discord-infostealer-lapresse/index.md)  
+  *Analyzing a Discord-based information stealer*
+
 
 
 ---
