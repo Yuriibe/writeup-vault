@@ -21,16 +21,16 @@ Deep dives into CVEs, penetration testing, and real-world attack chains.
 ### 🧪 Experimental Research
 Proof-of-concepts, novel techniques, and creative exploitation methods.
 
-- [🧨 From Pixels to Payload - DLL Search Order Hijacking](./experimental/from-pixels-to-payload/Part2.md)  
+- [🧨 From Pixels to Payload - DLL Search Order Hijacking](Part2.md)  
   *Part 2: Exploiting DLL loading behavior*
   
-- [🖼️ From Pixels to Payload](./experimental/from-pixels-to-payload/index.md)  
+- [🖼️ From Pixels to Payload](experimental/from-pixels-to-payload/index.md)  
   *Part 1: When images aren't just images*
 
 ### 🦠 Malware Analysis
 Reverse engineering, behavioral analysis, and IOC extraction from real-world samples.
 
-- [🧪 Discord InfoStealer (Lapresse)](./malware-analysis/Infostealer/discord-infostealer-lapresse/index.md)  
+- [🧪 Discord InfoStealer (Lapresse)](malware-analysis/Infostealer/discord-infostealer-lapresse/index.md)  
   *Analyzing a Discord-based information stealer*
 
 ---
