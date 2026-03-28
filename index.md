@@ -26,11 +26,15 @@ Deep dives into CVEs, penetration testing, and real-world attack chains.
 ### 🧪 Experimental Research
 Proof-of-concepts, novel techniques, and creative exploitation methods.
 
+- [🖼️ DNS Telemetry Blocking with AdGuard](experimental/Your-Smart-Home-Is-Snitching-On-You/index)  
+  *Your Smart Home Is Snitching On You — DNS Telemetry Blocking with AdGuard*
+
 - [🧨 From Pixels to Payload - DLL Search Order Hijacking](Part2.md)  
   *Part 2: Exploiting DLL loading behavior*
   
 - [🖼️ From Pixels to Payload](experimental/from-pixels-to-payload/index.md)  
   *Part 1: When images aren't just images*
+
 
 ### 🦠 Malware Analysis
 Reverse engineering, behavioral analysis, and IOC extraction from real-world samples.
