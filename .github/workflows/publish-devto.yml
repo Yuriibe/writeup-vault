@@ -25,6 +25,25 @@ jobs:
 
           token = os.environ["DEVTO_TOKEN"]
           print(f"Token length: {len(token)}, starts with: {token[:4]}")
+
+          # Quick connection test
+          test_payload = json.dumps({"article": {"title": "CI Test", "body_markdown": "test", "published": False}}).encode()
+          test_req = urllib.request.Request(
+              'https://dev.to/api/articles',
+              data=test_payload,
+              headers={'api-key': token, 'Content-Type': 'application/json'}
+          )
+          try:
+              with urllib.request.urlopen(test_req) as r:
+                  res = json.loads(r.read())
+                  print(f"Test article created: id={res['id']} - deleting now")
+                  del_req = urllib.request.Request(f"https://dev.to/api/articles/{res['id']}", method='DELETE', headers={'api-key': token})
+                  try: urllib.request.urlopen(del_req)
+                  except: pass
+          except urllib.error.HTTPError as e:
+              print(f"Test FAILED: HTTP {e.code} - {e.read().decode()}")
+              exit(1)
+
           posts_dir = "_posts"
 
           def parse_frontmatter(content):
