@@ -1,10 +1,12 @@
+# Your Smart Home Is Snitching On You: DNS Telemetry Blocking with AdGuard Home
+
 ## The Problem Nobody Talks About
 
 You buy a Philips Hue bulb. A *lightbulb*. You screw it in, connect it to the app, and think nothing of it.
 
 What you don't see: every 2 minutes, that lightbulb sends a DNS request to `diag.meethue.com`. Not when you turn it on. Not when something breaks. Every. Two. Minutes. Around the clock.
 
-![[query-log.png]]
+![Query log showing multiple DNS requests in six minutes](query-log.png)
 
 That's one PC, one Echo, one iPhone, and one lamp in six minutes. This is the floor, not the ceiling. AdGuard only sees DNS requests. Apps that hardcode IPs or use HTTPS certificate pinning bypass this entirely and you'd never know.
 
@@ -57,6 +59,7 @@ services:
 4. Point your router's DNS server to the Raspberry Pi IP
 
 That last step is key. Every device on the network automatically uses AdGuard, no per-device configuration needed.
+
 ### Fritz!Box: Setting the DNS Server
 
 If you're running a Fritz!Box, the setting is slightly buried:
@@ -65,9 +68,9 @@ If you're running a Fritz!Box, the setting is slightly buried:
 2. **Home Network -> Network -> Network Settings -> Advanced Network Settings -> IPv4 Settings**
 3. Set **Local DNS Server** to your Raspberry Pi IP (e.g. `192.168.178.85`)
 
-![[router_advanced_settings.png]]
+![Fritz!Box advanced network settings](router_advanced_settings.png)
 
-![[local-dns-ip.png]]
+![Local DNS server field set to Raspberry Pi IP](local-dns-ip.png)
 
 Save and done. Every device that gets its IP via DHCP from the Fritz!Box will now use AdGuard as its DNS resolver automatically, no configuration needed on individual devices.
 
@@ -89,9 +92,9 @@ AdGuard ships with its own list, but the real power comes from community lists. 
 
 Add lists under **Filters -> DNS Blocklists -> Add blocklist -> Add a custom list**.
 
-![[adguard-blocklist.png]]
+![AdGuard blocklist settings page](adguard-blocklist.png)
 
-![[blocklists-modal.png]]
+![Add custom blocklist modal](blocklists-modal.png)
 
 HaGeZi lists: `https://github.com/hagezi/dns-blocklists`
 
@@ -105,13 +108,14 @@ A bonus feature: AdGuard doubles as a local DNS server. Instead of remembering `
 AdGuard.lan  -> 192.168.178.85
 ```
 
-Now `http://AdGuard.lan` works from any device on the network. The `.lan` TLD is local-only, no external DNS ever sees it.
+Now `http://jellyfin.lan` works from any device on the network. The `.lan` TLD is local-only, no external DNS ever sees it.
 
 Set up under **Filters -> DNS Rewrites**.
 
 > **Note:** If you use Nginx Proxy Manager or another reverse proxy, point all `.lan` rewrites at the proxy's IP, not the service directly. The proxy handles routing from there.
 
 ---
+
 ## What Still Gets Through
 
 DNS blocking is not a complete solution. Several things bypass it:
@@ -131,11 +135,12 @@ If you block `example.com` for IPv4 (A records) but forget the AAAA record, IPv6
 **The bottom line:** What AdGuard shows you in the query log is the *minimum* amount of telemetry leaving your network, not the total.
 
 ---
+
 ## Results
 
 After running this setup for a week, a few things stand out:
 
-![[dashboard-stats.png]]
+![AdGuard Home dashboard statistics](dashboard-stats.png)
 
 - The Amazon Echo is by far the most aggressive device on the network. Multiple unique hash-based subdomains under `minerva.devices.a2z.com` get blocked every few minutes, even at 3am.
 - NordVPN, ironically a privacy tool, sends telemetry to `applytics.nordvpn.com` regularly.
@@ -155,5 +160,3 @@ None of this requires you to "do" anything. It happens in the background, on eve
 - DNS blocking has real limits. It's one layer, not a complete solution.
 
 ---
-
-*Setup questions or additions? Feel free to open an issue.*
