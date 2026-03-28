@@ -1,4 +1,7 @@
 title: writeup-vault by Yuriibe
 description: A collection of technical writeups on CTFs, malware analysis, exploitation, and infosec research.
-theme: jekyll-theme-hacker
+theme: jekyll-theme-midnight
 show_downloads: false
+
+plugins:
+    - jekyll-feed
