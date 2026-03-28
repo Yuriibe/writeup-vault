@@ -24,6 +24,7 @@ jobs:
           import os, re, json, urllib.request, urllib.error
 
           token = os.environ["DEVTO_TOKEN"]
+          print(f"Token length: {len(token)}, starts with: {token[:4]}")
           posts_dir = "_posts"
 
           def parse_frontmatter(content):
